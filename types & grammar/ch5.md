@@ -6,28 +6,26 @@ O último grande tema que queremos abordar é como funciona a sintaxe da linguag
 **Nota:** Para alguns leitores o termo "gramática" pode ser menos familiar do que o termo "sintaxe". Em muitos aspectos, são termos semelhantes, descrevendo as *regras* de como a linguagem funciona. Há diferenças sutis entre eles, mas elas não são relevantes para essa nossa discução. Em Javascript, a gramática é uma forma estruturada de descrever como a sintaxe (operadores, palavras-chaves, etc.) se encaixa na criação de programas válidos e coesos. Em outras palavras, discutir sintaxe sem gramática deixaria de fora muitos detalhes importantes. Por isso, nosso foco neste capítulo pode ser melhor descrito como *gramática*, embora seja com a sintaxe, pura e simples da linguagem, que os desenvolvedores mais lidam diariamente. 
 
 ## Instruções & Expressões
+É um erro comum para desenvolvedores assumirem que os termos "Instrução" e "Expressão" são equivalentes. Mas aqui precisamos fazer uma distinção entre os dois, pois há algumas diferenças muito importante entre eles em nossos programas com JS.
 
-It's fairly common for developers to assume that the term "statement" and "expression" are roughly equivalent. But here we need to distinguish between the two, because there are some very important differences in our JS programs.
+Para desenhar a distinção, vamos tomar emprestado da terminologia com a qual você esteja mais familiarizado: a língua porutguesa.
 
-To draw the distinction, let's borrow from terminology you may be more familiar with: the English language.
+Uma "instrução" é uma formção completa de palavras que expressão um pensamento. Ela é composta por uma ou mais "frases", as quais podem ser conectadas com pontuações ou conjunções ("e", "ou", etc). Uma frase por sí pode ser composta por frases menores. Algumas frases estão incompletas e não realizam muito por si mesmas, enquanto outras podem ficar sozinhas. Essas regras são coletivamentes chamadas de *gramática* da lingua portuguesa.
 
-A "sentence" is one complete formation of words that expresses a thought. It's comprised of one or more "phrases," each of which can be connected with punctuation marks or conjunction words ("and," "or," etc). A phrase can itself be made up of smaller phrases. Some phrases are incomplete and don't accomplish much by themselves, while other phrases can stand on their own. These rules are collectively called the *grammar* of the English language.
+E assim é com a gramática do Javascript. Instruções são sentenças, expressões são frases, e operadores são conjunções/pontuações.
 
-And so it goes with JavaScript grammar. Statements are sentences, expressions are phrases, and operators are conjunctions/punctuation.
-
-Every expression in JS can be evaluated down to a single, specific value result. For example:
+Toda expressão em JS pode ser avaliada até um único resultado de valor específico. Por exemplo:
 
 ```js
 var a = 3 * 6;
 var b = a;
 b;
 ```
+Nesse trecho de código, `3 * 6` é um expressão (resulta no valor `18`). Mas `a` na segunda linha tambem é uma expressão, assim como `b` na terceira linha. Ambas as expressões `a` e `b` apontam para os valores armazenados momentaneamente nessas variáveis, as quais vem a ser `18`.
 
-In this snippet, `3 * 6` is an expression (evaluates to the value `18`). But `a` on the second line is also an expression, as is `b` on the third line. The `a` and `b` expressions both evaluate to the values stored in those variables at that moment, which also happens to be `18`.
+Além disso, cada uma das três linhas á uma instrução contendo expressões. `var a = 3 * 6` e `var b = a` são chamadas "declaração de instruções" porque ambas declaram uma variável (e opcionalmente atribuem um valor à ela). As atribuições `a = 3 * 6` e `b = a` (menos as `var`s) são chamadas instruções de atribuições. 
 
-Moreover, each of the three lines is a statement containing expressions. `var a = 3 * 6` and `var b = a` are called "declaration statements" because they each declare a variable (and optionally assign a value to it). The `a = 3 * 6` and `b = a` assignments (minus the `var`s) are called assignment expressions.
-
-The third line contains just the expression `b`, but it's also a statement all by itself (though not a terribly interesting one!). This is generally referred to as an "expression statement."
+A terceira linha contém apenas a expressão `b`, mas é também uma instrução por sí só (). Isso geralmente é referenciado como uma "instrução de expressão".
 
 ### Statement Completion Values
 
